@@ -1,1 +1,2 @@
 add_subdirectory(MarketData)
+add_subdirectory(Signal)

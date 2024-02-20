@@ -1,4 +1,5 @@
 #include "include/MarketData/MarketDataProcessor.h"
+#include "include/Signal/SignalGenerator.h"
 
 #include <iostream>
 #include <string>
@@ -11,6 +12,9 @@ int main(int argc, char* argv[]) {
     MarketDataProcessor* mdp = new MarketDataProcessor();
     mdp->read("../data");
     mdp->printStatistics();
+
+    SignalGenerator* sg = new SignalGenerator();
+    std::vector<Signal> signals = sg->generateSignals(mdp->getMarketData());
     
     getchar();
     return 0;
